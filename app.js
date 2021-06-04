@@ -69,7 +69,8 @@ app.get('/', async (req, res) => {
         new Date(),
         new Date(parseInt(timestamp)),
       );
-
+      /* For each post we construct an object containing
+      the message,the author username and a timestamp */
       timeline.push({
         message: await ahget(`post:${post}`, 'message'),
         author: await ahget(`post:${post}`, 'username'),
