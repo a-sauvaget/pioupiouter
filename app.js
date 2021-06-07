@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-await-in-loop */
@@ -15,6 +16,7 @@ const { promisify } = require('util');
 const redis = require('redis');
 const bcrypt = require('bcrypt');
 const { formatDistance } = require('date-fns');
+const _ = require('lodash');
 
 // Acces to redis DB
 const client = redis.createClient({
@@ -213,5 +215,15 @@ app.post('/follow', (req, res) => {
   res.redirect('/');
 });
 
+// Logout
+app.post('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    res.clearCookie('connect.sid');
+    res.redirect('/');
+    console.log('Log out succeeded');
+  });
+});
+
 // Active the server
-app.listen(3000, () => console.log('Server ready'));
+app.listen(3001, () => console.log('Server ready'));
+app.disable('x-powered-by');
