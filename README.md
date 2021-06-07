@@ -12,7 +12,8 @@
   </a>
 </p>
 
-> A Twitter clone
+> A Twitter clone </br>
+> Using: Node.js, Express, Redis and Pug.
 
 ### 🏠 [Homepage](https://github.com/a-sauvaget/pioupiouter#readme)
 
