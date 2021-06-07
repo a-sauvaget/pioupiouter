@@ -1,2 +1,2 @@
 # pioupiouter
-A Twitter clone
+A Twitter like application.
